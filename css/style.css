@@ -98,200 +98,313 @@ a {
     .todo-content .todoInput::-ms-input-placeholder {
       /* Microsoft Edge */
       color: #C8C8C8; }
-
-.addTask {
-  width: 620px;
-  -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
-  box-shadow: 0 4px 4px 0 #C8C8C8; }
-  .addTask .addTask-view {
-    display: block;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  .todo-content .addTask {
     width: 620px;
-    height: 75px;
-    padding: 24px 32px 24px 32px;
-    background: #F2F2F2;
-    border-radius: 5px 5px 0 0;
-    border-bottom: 3px solid #C8C8C8; }
-    .addTask .addTask-view .inputCheckbox {
-      display: none; }
-    .addTask .addTask-view .todoCheckbox {
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-      line-height: 1;
-      vertical-align: middle;
-      background: #fff;
-      border-radius: 2px;
-      margin-right: 15px; }
-    .addTask .addTask-view .todoTitleInput {
-      vertical-align: middle;
-      font-family: Roboto Medium;
+    -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
+    box-shadow: 0 4px 4px 0 #C8C8C8; }
+    .todo-content .addTask .addTask-view {
+      display: block;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 620px;
+      height: 75px;
+      padding: 24px 32px 24px 32px;
+      background: #F2F2F2;
+      border-radius: 5px 5px 0 0;
+      border-bottom: 3px solid #C8C8C8; }
+      .todo-content .addTask .addTask-view .inputCheckbox {
+        display: none; }
+      .todo-content .addTask .addTask-view .todoCheckbox {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 1;
+        vertical-align: middle;
+        background: #fff;
+        border-radius: 2px;
+        margin-right: 15px; }
+      .todo-content .addTask .addTask-view .todoTitleInput {
+        vertical-align: middle;
+        font-family: Roboto Medium;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        background: #F2F2F2; }
+      .todo-content .addTask .addTask-view .editIcon a {
+        color: #000000;
+        font-size: 24px;
+        text-decoration: none;
+        margin-left: 32px; }
+        .todo-content .addTask .addTask-view .editIcon a i.fa-pencil-alt {
+          color: #4A90E2; }
+    .todo-content .addTask .scroll {
+      background: #F2F2F2;
+      padding: 24px 75px 0 75px; }
+      .todo-content .addTask .scroll ul li {
+        margin-bottom: 24px; }
+        .todo-content .addTask .scroll ul li label i {
+          font-size: 20px;
+          margin-right: 10px; }
+        .todo-content .addTask .scroll ul li label.fileLabel {
+          width: 32px;
+          height: 32px;
+          background: #C8C8C8;
+          border-radius: 2px; }
+          .todo-content .addTask .scroll ul li label.fileLabel::after {
+            content: "+";
+            color: #fff;
+            font-size: 25px;
+            line-height: 32px;
+            padding: 0 9px;
+            vertical-align: middle; }
+        .todo-content .addTask .scroll ul li .deadlineInput {
+          color: #C8C8C8;
+          margin: 10px 0 0 28px;
+          padding: 8px 16px;
+          background: #FFFFFF;
+          border-radius: 2px;
+          border: none;
+          font-family: Roboto Regular;
+          font-size: 16px; }
+        .todo-content .addTask .scroll ul li .deadlineInput-time {
+          color: #C8C8C8;
+          margin-left: 8px;
+          padding: 8px 16px;
+          background: #FFFFFF;
+          border-radius: 2px;
+          border: none;
+          font-family: Roboto Regular;
+          font-size: 16px; }
+        .todo-content .addTask .scroll ul li .commentTextarea {
+          margin: 10px 0 0 28px;
+          padding: 8px 16px;
+          background: #FFFFFF;
+          border-radius: 2px;
+          border: none;
+          font-family: Roboto Regular;
+          font-size: 16px; }
+          .todo-content .addTask .scroll ul li .commentTextarea::-webkit-input-placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content .addTask .scroll ul li .commentTextarea:-ms-input-placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content .addTask .scroll ul li .commentTextarea::-ms-input-placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content .addTask .scroll ul li .commentTextarea::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content .addTask .scroll ul li .commentTextarea:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content .addTask .scroll ul li .commentTextarea::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: #C8C8C8;
+            line-height: 24px; }
+    .todo-content .addTask .button {
+      font-family: Roboto Regular; }
+    .todo-content .addTask .cancelBtn {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #FFFFFF;
       font-size: 24px;
+      color: #D0021B;
+      text-align: center;
       border: none;
-      outline: none;
-      background: #F2F2F2; }
-    .addTask .addTask-view .editIcon a {
-      color: #000000;
+      border-radius: 0 0 0 5px;
+      height: 60px;
+      cursor: pointer; }
+    .todo-content .addTask .addTaskBtn {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #4A90E2;
       font-size: 24px;
-      text-decoration: none;
-      margin-left: 32px; }
-      .addTask .addTask-view .editIcon a i.fa-pencil-alt {
-        color: #4A90E2; }
-  .addTask .scroll {
-    background: #F2F2F2;
-    padding: 24px 75px 0 75px; }
-    .addTask .scroll ul li {
-      margin-bottom: 24px; }
-      .addTask .scroll ul li label i {
-        font-size: 20px;
-        margin-right: 10px; }
-      .addTask .scroll ul li label.fileLabel {
-        width: 32px;
-        height: 32px;
-        background: #C8C8C8;
-        border-radius: 2px; }
-        .addTask .scroll ul li label.fileLabel::after {
-          content: "+";
-          color: #fff;
-          font-size: 25px;
-          line-height: 32px;
-          padding: 0 9px;
-          vertical-align: middle; }
-      .addTask .scroll ul li .deadlineInput {
-        color: #C8C8C8;
-        margin: 10px 0 0 28px;
-        padding: 8px 16px;
-        background: #FFFFFF;
-        border-radius: 2px;
-        border: none;
-        font-family: Roboto Regular;
-        font-size: 16px; }
-      .addTask .scroll ul li .deadlineInput-time {
-        color: #C8C8C8;
-        margin-left: 8px;
-        padding: 8px 16px;
-        background: #FFFFFF;
-        border-radius: 2px;
-        border: none;
-        font-family: Roboto Regular;
-        font-size: 16px; }
-      .addTask .scroll ul li .commentTextarea {
-        margin: 10px 0 0 28px;
-        padding: 8px 16px;
-        background: #FFFFFF;
-        border-radius: 2px;
-        border: none;
-        font-family: Roboto Regular;
-        font-size: 16px; }
-        .addTask .scroll ul li .commentTextarea::-webkit-input-placeholder {
-          /* Chrome, Firefox, Opera, Safari 10.1+ */
-          color: #C8C8C8;
-          line-height: 24px; }
-        .addTask .scroll ul li .commentTextarea:-ms-input-placeholder {
-          /* Chrome, Firefox, Opera, Safari 10.1+ */
-          color: #C8C8C8;
-          line-height: 24px; }
-        .addTask .scroll ul li .commentTextarea::-ms-input-placeholder {
-          /* Chrome, Firefox, Opera, Safari 10.1+ */
-          color: #C8C8C8;
-          line-height: 24px; }
-        .addTask .scroll ul li .commentTextarea::placeholder {
-          /* Chrome, Firefox, Opera, Safari 10.1+ */
-          color: #C8C8C8;
-          line-height: 24px; }
-        .addTask .scroll ul li .commentTextarea:-ms-input-placeholder {
-          /* Internet Explorer 10-11 */
-          color: #C8C8C8;
-          line-height: 24px; }
-        .addTask .scroll ul li .commentTextarea::-ms-input-placeholder {
-          /* Microsoft Edge */
-          color: #C8C8C8;
-          line-height: 24px; }
-  .addTask .button {
-    font-family: Roboto Regular; }
-  .addTask .cancelBtn {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    font-size: 24px;
-    color: #D0021B;
-    text-align: center;
-    border: none;
-    border-radius: 0 0 0 5px;
-    height: 60px;
-    cursor: pointer; }
-  .addTask .addTaskBtn {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    background: #4A90E2;
-    font-size: 24px;
-    color: #fff;
-    text-align: center;
-    border: none;
-    border-radius: 0 0 5px 0;
-    height: 60px;
-    cursor: pointer; }
+      color: #fff;
+      text-align: center;
+      border: none;
+      border-radius: 0 0 5px 0;
+      height: 60px;
+      cursor: pointer; }
 
 .todo-content-list {
   margin-top: 25px;
   margin-bottom: 100px; }
-  .todo-content-list .todo-view {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  .todo-content-list .addTask {
     width: 620px;
-    height: 100px;
-    padding: 24px 32px 16px 32px;
-    margin-bottom: 10px;
-    background: #F2F2F2;
-    border-radius: 5px 5px 0 0; }
-    .todo-content-list .todo-view.completed {
-      height: 75px;
-      padding: 24px 32px 24px 32px; }
-    .todo-content-list .todo-view.editing {
-      overflow: hidden;
-      border-bottom: 3px solid #C8C8C8;
-      margin-bottom: 0px; }
-    .todo-content-list .todo-view .inputCheckbox {
-      display: none; }
-    .todo-content-list .todo-view label {
+    -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
+    box-shadow: 0 4px 4px 0 #C8C8C8; }
+    .todo-content-list .addTask .todo-view {
+      display: block;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 620px;
+      height: 100px;
+      padding: 24px 32px 16px 32px;
+      background: #F2F2F2;
+      border-radius: 5px 5px 0 0;
+      border-bottom: 3px solid #C8C8C8; }
+      .todo-content-list .addTask .todo-view.completed {
+        height: 75px;
+        padding: 24px 32px 24px 32px; }
+      .todo-content-list .addTask .todo-view.editing {
+        overflow: hidden;
+        border-bottom: 3px solid #C8C8C8;
+        margin-bottom: 0px;
+        height: 75px;
+        padding: 24px 32px 24px 32px; }
+      .todo-content-list .addTask .todo-view .inputCheckbox {
+        display: none; }
+      .todo-content-list .addTask .todo-view label {
+        font-size: 24px;
+        color: #000000; }
+        .todo-content-list .addTask .todo-view label.completed {
+          color: #9B9B9B;
+          text-decoration: line-through; }
+      .todo-content-list .addTask .todo-view .todoCheckbox {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        line-height: 1;
+        vertical-align: middle;
+        background: #fff;
+        border-radius: 2px;
+        margin-right: 15px; }
+        .todo-content-list .addTask .todo-view .todoCheckbox.check {
+          background-color: #4A90E2; }
+          .todo-content-list .addTask .todo-view .todoCheckbox.check:after {
+            content: "\2714";
+            font-size: 20px;
+            line-height: 25px;
+            padding: 0px 4px;
+            color: #fff;
+            text-align: center; }
+      .todo-content-list .addTask .todo-view .todoTitleInput {
+        vertical-align: middle;
+        font-family: Roboto Medium;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        background: #F2F2F2; }
+      .todo-content-list .addTask .todo-view .editIcon {
+        vertical-align: middle; }
+        .todo-content-list .addTask .todo-view .editIcon a {
+          color: #000000;
+          font-size: 24px;
+          text-decoration: none;
+          margin-left: 32px; }
+          .todo-content-list .addTask .todo-view .editIcon a.editing {
+            color: #4A90E2; }
+          .todo-content-list .addTask .todo-view .editIcon a.point {
+            color: #F5A623; }
+      .todo-content-list .addTask .todo-view .dataIcon {
+        padding: 0;
+        margin-left: 45px;
+        color: #757575; }
+        .todo-content-list .addTask .todo-view .dataIcon.completed {
+          display: none !important; }
+        .todo-content-list .addTask .todo-view .dataIcon i {
+          margin-right: 15px;
+          font-size: 16px; }
+    .todo-content-list .addTask .scroll {
+      background: #F2F2F2;
+      padding: 24px 75px 0 75px; }
+      .todo-content-list .addTask .scroll ul li {
+        margin-bottom: 24px; }
+        .todo-content-list .addTask .scroll ul li label i {
+          font-size: 20px;
+          margin-right: 10px; }
+        .todo-content-list .addTask .scroll ul li label.fileLabel {
+          width: 32px;
+          height: 32px;
+          background: #C8C8C8;
+          border-radius: 2px; }
+          .todo-content-list .addTask .scroll ul li label.fileLabel::after {
+            content: "+";
+            color: #fff;
+            font-size: 25px;
+            line-height: 32px;
+            padding: 0 9px;
+            vertical-align: middle; }
+        .todo-content-list .addTask .scroll ul li .deadlineInput {
+          color: #C8C8C8;
+          margin: 10px 0 0 28px;
+          padding: 8px 16px;
+          background: #FFFFFF;
+          border-radius: 2px;
+          border: none;
+          font-family: Roboto Regular;
+          font-size: 16px; }
+        .todo-content-list .addTask .scroll ul li .deadlineInput-time {
+          color: #C8C8C8;
+          margin-left: 8px;
+          padding: 8px 16px;
+          background: #FFFFFF;
+          border-radius: 2px;
+          border: none;
+          font-family: Roboto Regular;
+          font-size: 16px; }
+        .todo-content-list .addTask .scroll ul li .commentTextarea {
+          margin: 10px 0 0 28px;
+          padding: 8px 16px;
+          background: #FFFFFF;
+          border-radius: 2px;
+          border: none;
+          font-family: Roboto Regular;
+          font-size: 16px; }
+          .todo-content-list .addTask .scroll ul li .commentTextarea::-webkit-input-placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content-list .addTask .scroll ul li .commentTextarea:-ms-input-placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content-list .addTask .scroll ul li .commentTextarea::-ms-input-placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content-list .addTask .scroll ul li .commentTextarea::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content-list .addTask .scroll ul li .commentTextarea:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #C8C8C8;
+            line-height: 24px; }
+          .todo-content-list .addTask .scroll ul li .commentTextarea::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: #C8C8C8;
+            line-height: 24px; }
+    .todo-content-list .addTask .button {
+      font-family: Roboto Regular; }
+    .todo-content-list .addTask .cancelBtn {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #FFFFFF;
       font-size: 24px;
-      color: #000000; }
-      .todo-content-list .todo-view label.completed {
-        color: #9B9B9B;
-        text-decoration: line-through; }
-    .todo-content-list .todo-view .todoCheckbox {
-      display: inline-block;
-      width: 25px;
-      height: 25px;
-      line-height: 1;
-      vertical-align: middle;
-      background: #fff;
-      border-radius: 2px;
-      margin-right: 15px; }
-    .todo-content-list .todo-view .todoCheckbox.check {
-      background-color: #4A90E2; }
-      .todo-content-list .todo-view .todoCheckbox.check:after {
-        content: "\2714";
-        font-size: 20px;
-        line-height: 25px;
-        padding: 0px 4px;
-        color: #fff;
-        text-align: center; }
-    .todo-content-list .todo-view .editIcon a {
-      color: #000000;
+      color: #D0021B;
+      text-align: center;
+      border: none;
+      border-radius: 0 0 0 5px;
+      height: 60px;
+      cursor: pointer; }
+    .todo-content-list .addTask .addTaskBtn {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #4A90E2;
       font-size: 24px;
-      text-decoration: none;
-      margin-left: 32px; }
-    .todo-content-list .todo-view .dataIcon {
-      padding: 0;
-      margin-left: 40px;
-      color: #757575; }
-      .todo-content-list .todo-view .dataIcon.completed {
-        display: none !important; }
-      .todo-content-list .todo-view .dataIcon i {
-        margin-right: 15px;
-        font-size: 20px; }
+      color: #fff;
+      text-align: center;
+      border: none;
+      border-radius: 0 0 5px 0;
+      height: 60px;
+      cursor: pointer; }
 
 [v-cloak] {
   display: none; }

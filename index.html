@@ -31,7 +31,7 @@
         </header>
         <section class="todo-content d-flex flex-column  align-items-center">
             <button class="todoInput" @click="addTask = !addTask"> + Add Task</button>
-            <div class="addTask" v-if="addTask">
+            <div class="addTask" v-if="addTask" v-cloak>
                 <div class="addTask-view d-flex flex-wrap justify-content-between align-items-start">
                     <input type="checkbox" class="inputCheckbox">
                     <label>
@@ -80,24 +80,24 @@
             <ul class="todo-content-list" v-cloak>
                 <li v-for="(item , key) in filteredTodos">
                     <div class="addTask">
-                        <div class="addTask-view d-flex flex-wrap justify-content-between align-items-start">
-                            <input type="checkbox" class="inputCheckbox">
-                            <label>
-                                <span class="todoCheckbox"></span>
-                                <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle">
+                        <div class="todo-view d-flex flex-wrap justify-content-between align-items-start" :class="{'editing':item.editing,'completed':item.completed}">
+                            <input type="checkbox" class="inputCheckbox" :id="item.id" v-model="item.completed">
+                            <label :for="item.id" :class="{'completed':item.completed}">
+                                <span class="todoCheckbox" :class="{'check':item.completed}"></span><span v-if="!item.editing">{{item.title}}</span>
+                                <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-if="item.editing" v-model="cacheTitle">
                             </label>
                             <div class="editIcon ml-auto">
-                                <a href="#">
-                                    <i class="far fa-star"></i>
+                                <a @click.prevent="item.point = !item.point" :class="{'point':item.point}" href="#" >
+                                    <i class="fa-star" :class="{'far':!item.point,'fas':item.point}"></i>
                                 </a>
-                                <a @click.prevent="item.editing = !item.editing" href="#">
+                                <a @click.prevent="item.editing = !item.editing,editTodo(item)" :class="{'editing':item.editing}" href="#">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <a href="#" @click.prevent="removeTodo(key)">
                                     <i class="far fa-trash-alt"></i>
                                 </a>
                             </div>
-                            <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }" v-if="item.editing">
+                            <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }" v-if="!item.editing">
                                 <li>
                                     <i class="far fa-calendar-alt"></i>
                                 </li>
@@ -109,7 +109,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="scroll" v-if="!item.editing">
+                        <div class="scroll" v-if="item.editing">
                             <ul class="d-flex flex-column">
                                 <li>
                                     <label for="">
@@ -133,9 +133,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="button d-flex" v-if="!item.editing">
-                            <button class="cancelBtn col-6">X Cancel</button>
-                            <button class="addTaskBtn col-6" @click="addTodo">+ Add Task</button>
+                        <div class="button d-flex" v-if="item.editing">
+                            <button class="cancelBtn col-6" @click="cancelEdit(),item.editing = false">X Cancel</button>
+                            <button class="addTaskBtn col-6" @click="addTodo">+ Save</button>
                         </div>
                     </div>
                 </li>

@@ -60,229 +60,350 @@
             color: #C8C8C8;
         }
     }
-}
-
-.addTask {
-    width: 620px;
-    box-shadow: 0 4px 4px 0 #C8C8C8;
-    .addTask-view {
-        display: block;
-        box-sizing: border-box;
+    .addTask {
         width: 620px;
-        height: 75px;
-        padding: 24px 32px 24px 32px;
-        background: #F2F2F2;
-        border-radius: 5px 5px 0 0;
-        border-bottom: 3px solid #C8C8C8;
-        .inputCheckbox {
-            display: none;
-        }
-        .todoCheckbox {
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            line-height: 1;
-            vertical-align: middle;
-            background: #fff;
-            border-radius: 2px;
-            margin-right: 15px;
-        }
-        .todoTitleInput {
-            vertical-align: middle;
-            font-family: Roboto Medium;
-            font-size: 24px;
-            border: none;
-            outline: none;
+        box-shadow: 0 4px 4px 0 #C8C8C8;
+        .addTask-view {
+            display: block;
+            box-sizing: border-box;
+            width: 620px;
+            height: 75px;
+            padding: 24px 32px 24px 32px;
             background: #F2F2F2;
-        }
-        .editIcon {
-            a {
-                color: #000000;
-                font-size: 24px;
-                text-decoration: none;
-                margin-left: 32px;
-                i {
-                    &.fa-pencil-alt {
-                        color: #4A90E2;
-                    }
-                }
+            border-radius: 5px 5px 0 0;
+            border-bottom: 3px solid #C8C8C8;
+            .inputCheckbox {
+                display: none;
             }
-        }
-    }
-    .scroll {
-        background: #F2F2F2;
-        padding: 24px 75px 0 75px;
-        ul {
-            li {
-                margin-bottom: 24px;
-                label {
+            .todoCheckbox {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                line-height: 1;
+                vertical-align: middle;
+                background: #fff;
+                border-radius: 2px;
+                margin-right: 15px;
+            }
+            .todoTitleInput {
+                vertical-align: middle;
+                font-family: Roboto Medium;
+                font-size: 24px;
+                border: none;
+                outline: none;
+                background: #F2F2F2;
+            }
+            .editIcon {
+                a {
+                    color: #000000;
+                    font-size: 24px;
+                    text-decoration: none;
+                    margin-left: 32px;
                     i {
-                        font-size: 20px;
-                        margin-right: 10px;
-                    }
-                    &.fileLabel {
-                        width: 32px;
-                        height: 32px;
-                        background: #C8C8C8;
-                        border-radius: 2px;
-                        &::after {
-                            content: "+";
-                            color: #fff;
-                            font-size: 25px;
-                            line-height: 32px;
-                            padding: 0 9px;
-                            vertical-align: middle;
+                        &.fa-pencil-alt {
+                            color: #4A90E2;
                         }
                     }
                 }
-                .deadlineInput {
-                    color: #C8C8C8;
-                    margin: 10px 0 0 28px;
-                    padding: 8px 16px;
-                    background: #FFFFFF;
-                    border-radius: 2px;
-                    border: none;
-                    font-family: Roboto Regular;
-                    font-size: 16px;
-                }
-                .deadlineInput-time {
-                    color: #C8C8C8;
-                    margin-left: 8px;
-                    padding: 8px 16px;
-                    background: #FFFFFF;
-                    border-radius: 2px;
-                    border: none;
-                    font-family: Roboto Regular;
-                    font-size: 16px;
-                }
-                .commentTextarea {
-                    margin: 10px 0 0 28px;
-                    padding: 8px 16px;
-                    background: #FFFFFF;
-                    border-radius: 2px;
-                    border: none;
-                    font-family: Roboto Regular;
-                    font-size: 16px;
-                    &::placeholder {
-                        /* Chrome, Firefox, Opera, Safari 10.1+ */
-                        color: #C8C8C8;
-                        line-height: 24px;
+            }
+        }
+        .scroll {
+            background: #F2F2F2;
+            padding: 24px 75px 0 75px;
+            ul {
+                li {
+                    margin-bottom: 24px;
+                    label {
+                        i {
+                            font-size: 20px;
+                            margin-right: 10px;
+                        }
+                        &.fileLabel {
+                            width: 32px;
+                            height: 32px;
+                            background: #C8C8C8;
+                            border-radius: 2px;
+                            &::after {
+                                content: "+";
+                                color: #fff;
+                                font-size: 25px;
+                                line-height: 32px;
+                                padding: 0 9px;
+                                vertical-align: middle;
+                            }
+                        }
                     }
-                    &:-ms-input-placeholder {
-                        /* Internet Explorer 10-11 */
+                    .deadlineInput {
                         color: #C8C8C8;
-                        line-height: 24px;
+                        margin: 10px 0 0 28px;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: Roboto Regular;
+                        font-size: 16px;
                     }
-                    &::-ms-input-placeholder {
-                        /* Microsoft Edge */
+                    .deadlineInput-time {
                         color: #C8C8C8;
-                        line-height: 24px;
+                        margin-left: 8px;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: Roboto Regular;
+                        font-size: 16px;
+                    }
+                    .commentTextarea {
+                        margin: 10px 0 0 28px;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: Roboto Regular;
+                        font-size: 16px;
+                        &::placeholder {
+                            /* Chrome, Firefox, Opera, Safari 10.1+ */
+                            color: #C8C8C8;
+                            line-height: 24px;
+                        }
+                        &:-ms-input-placeholder {
+                            /* Internet Explorer 10-11 */
+                            color: #C8C8C8;
+                            line-height: 24px;
+                        }
+                        &::-ms-input-placeholder {
+                            /* Microsoft Edge */
+                            color: #C8C8C8;
+                            line-height: 24px;
+                        }
                     }
                 }
             }
         }
-    }
-    .button {
-        font-family: Roboto Regular;
-    }
-    .cancelBtn {
-        box-sizing: border-box;
-        background: #FFFFFF;
-        font-size: 24px;
-        color: #D0021B;
-        text-align: center;
-        border: none;
-        border-radius: 0 0 0 5px;
-        height: 60px;
-        cursor: pointer;
-    }
-    .addTaskBtn {
-        box-sizing: border-box;
-        background: #4A90E2;
-        font-size: 24px;
-        color: #fff;
-        text-align: center;
-        border: none;
-        border-radius: 0 0 5px 0;
-        height: 60px;
-        cursor: pointer;
+        .button {
+            font-family: Roboto Regular;
+        }
+        .cancelBtn {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            font-size: 24px;
+            color: #D0021B;
+            text-align: center;
+            border: none;
+            border-radius: 0 0 0 5px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .addTaskBtn {
+            box-sizing: border-box;
+            background: #4A90E2;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 0 0 5px 0;
+            height: 60px;
+            cursor: pointer;
+        }
     }
 }
 
 .todo-content-list {
     margin-top: 25px;
     margin-bottom: 100px;
-    .todo-view {
-        box-sizing: border-box;
+    .addTask {
         width: 620px;
-        height: 100px;
-        padding: 24px 32px 16px 32px;
-        margin-bottom: 10px;
-        background: #F2F2F2;
-        border-radius: 5px 5px 0 0;
-        &.completed {
-            height: 75px;
-            padding: 24px 32px 24px 32px;
-        }
-        &.editing {
-            overflow: hidden;
+        box-shadow: 0 4px 4px 0 #C8C8C8;
+        .todo-view {
+            display: block;
+            box-sizing: border-box;
+            width: 620px;
+            height: 100px;
+            padding: 24px 32px 16px 32px;
+            background: #F2F2F2;
+            border-radius: 5px 5px 0 0;
             border-bottom: 3px solid #C8C8C8;
-            margin-bottom: 0px;
-        }
-        .inputCheckbox {
-            display: none;
-        }
-        label {
-            font-size: 24px;
-            color: #000000;
             &.completed {
-                color: #9B9B9B;
-                text-decoration: line-through;
+                height: 75px;
+                padding: 24px 32px 24px 32px;
             }
-        }
-        .todoCheckbox {
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            line-height: 1;
-            vertical-align: middle;
-            background: #fff;
-            border-radius: 2px;
-            margin-right: 15px;
-        }
-        .todoCheckbox.check {
-            background-color: #4A90E2;
-            &:after {
-                content: "\2714"; // font-size: 20px;
-                font-size: 20px;
-                line-height: 25px;
-                padding: 0px 4px;
-                color: #fff;
-                text-align: center;
+            &.editing {
+                overflow: hidden;
+                border-bottom: 3px solid #C8C8C8;
+                margin-bottom: 0px;
+                height: 75px;
+                padding: 24px 32px 24px 32px;
             }
-        }
-        .editIcon {
-            a {
-                color: #000000;
+            .inputCheckbox {
+                display: none;
+            }
+            label {
                 font-size: 24px;
-                text-decoration: none;
-                margin-left: 32px;
+                color: #000000;
+                &.completed {
+                    color: #9B9B9B;
+                    text-decoration: line-through;
+                }
+            }
+            .todoCheckbox {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                line-height: 1;
+                vertical-align: middle;
+                background: #fff;
+                border-radius: 2px;
+                margin-right: 15px;
+                &.check {
+                    background-color: #4A90E2;
+                    &:after {
+                        content: "\2714"; // font-size: 20px;
+                        font-size: 20px;
+                        line-height: 25px;
+                        padding: 0px 4px;
+                        color: #fff;
+                        text-align: center;
+                    }
+                }
+            }
+            // .todoCheckbox
+            .todoTitleInput {
+                vertical-align: middle;
+                font-family: Roboto Medium;
+                font-size: 24px;
+                border: none;
+                outline: none;
+                background: #F2F2F2;
+            }
+            .editIcon {
+                vertical-align: middle;
+                a {
+                    color: #000000;
+                    font-size: 24px;
+                    text-decoration: none;
+                    margin-left: 32px;
+                    &.editing {
+                        color: #4A90E2;
+                    }
+                    &.point{
+                        color: #F5A623;
+                    }
+                }
+            }
+            .dataIcon {
+                padding: 0;
+                margin-left: 45px;
+                color: #757575;
+                &.completed {
+                    display: none !important;
+                }
+                i {
+                    margin-right: 15px;
+                    font-size: 16px;
+                }
             }
         }
-        .dataIcon {
-            padding: 0;
-            margin-left: 40px;
-            color: #757575;
-            &.completed {
-                display: none !important;
+        .scroll {
+            background: #F2F2F2;
+            padding: 24px 75px 0 75px;
+            ul {
+                li {
+                    margin-bottom: 24px;
+                    label {
+                        i {
+                            font-size: 20px;
+                            margin-right: 10px;
+                        }
+                        &.fileLabel {
+                            width: 32px;
+                            height: 32px;
+                            background: #C8C8C8;
+                            border-radius: 2px;
+                            &::after {
+                                content: "+";
+                                color: #fff;
+                                font-size: 25px;
+                                line-height: 32px;
+                                padding: 0 9px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                    .deadlineInput {
+                        color: #C8C8C8;
+                        margin: 10px 0 0 28px;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: Roboto Regular;
+                        font-size: 16px;
+                    }
+                    .deadlineInput-time {
+                        color: #C8C8C8;
+                        margin-left: 8px;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: Roboto Regular;
+                        font-size: 16px;
+                    }
+                    .commentTextarea {
+                        margin: 10px 0 0 28px;
+                        padding: 8px 16px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        border: none;
+                        font-family: Roboto Regular;
+                        font-size: 16px;
+                        &::placeholder {
+                            /* Chrome, Firefox, Opera, Safari 10.1+ */
+                            color: #C8C8C8;
+                            line-height: 24px;
+                        }
+                        &:-ms-input-placeholder {
+                            /* Internet Explorer 10-11 */
+                            color: #C8C8C8;
+                            line-height: 24px;
+                        }
+                        &::-ms-input-placeholder {
+                            /* Microsoft Edge */
+                            color: #C8C8C8;
+                            line-height: 24px;
+                        }
+                    }
+                }
             }
-            i {
-                margin-right: 15px;
-                font-size: 20px;
-            }
+        }
+        .button {
+            font-family: Roboto Regular;
+        }
+        .cancelBtn {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            font-size: 24px;
+            color: #D0021B;
+            text-align: center;
+            border: none;
+            border-radius: 0 0 0 5px;
+            height: 60px;
+            cursor: pointer;
+        }
+        .addTaskBtn {
+            box-sizing: border-box;
+            background: #4A90E2;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 0 0 5px 0;
+            height: 60px;
+            cursor: pointer;
         }
     }
 }
+
 
 // .scroll {
 //     height: 380px;
