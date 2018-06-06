@@ -42,6 +42,7 @@ var app = new Vue({
             this.cacheTitle = item.title;
         },
         cancelEdit: function () {
+            this.cacheTodo.editing = false;
             this.cacheTodo = {};
         }
 
