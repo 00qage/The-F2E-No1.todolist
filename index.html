@@ -29,13 +29,14 @@
                 </li>
             </ul>
         </header>
-        <section class="todo-content d-flex flex-column  align-items-center" >
+        <section class="todo-content d-flex flex-column  align-items-center">
             <button class="todoInput" @click="addTask = !addTask"> + Add Task</button>
             <div class="addTask" v-if="addTask">
                 <div class="addTask-view d-flex flex-wrap justify-content-between align-items-start">
                     <input type="checkbox" class="inputCheckbox">
                     <label>
-                        <span class="todoCheckbox"></span><input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle">
+                        <span class="todoCheckbox"></span>
+                        <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle">
                     </label>
                     <div class="editIcon ml-auto">
                         <a href="#">
@@ -49,18 +50,22 @@
                 <div class="scroll">
                     <ul class="d-flex flex-column">
                         <li>
-                            <label for=""><i class="far fa-calendar-alt"></i>Deadline</label>
+                            <label for="">
+                                <i class="far fa-calendar-alt"></i>Deadline</label>
                             <br>
-                            <input type="date" class="deadlineInput"><input type="time" class="deadlineInput-time">
+                            <input type="date" class="deadlineInput">
+                            <input type="time" class="deadlineInput-time">
                         </li>
                         <li>
-                            <label for="file"><i class="far fa-file"></i>File</label>
+                            <label for="file">
+                                <i class="far fa-file"></i>File</label>
                             <br>
                             <input type="file" id="file" style="display: none;">
                             <label for="file" style="margin: 10px 0 0 25px;" class="fileLabel"></label>
                         </li>
                         <li>
-                            <label for="textarea"><i class="far fa-comment-dots"></i>Comment</label>
+                            <label for="textarea">
+                                <i class="far fa-comment-dots"></i>Comment</label>
                             <br>
                             <textarea class="commentTextarea" id="textarea" placeholder="Type your memo here…" cols="50" rows="10"></textarea>
                         </li>
@@ -74,40 +79,64 @@
             </div>
             <ul class="todo-content-list" v-cloak>
                 <li v-for="(item , key) in filteredTodos">
-                    <div class="todo-view d-flex flex-wrap justify-content-between align-items-start" :class="{'completed': item.completed,'editing':item.editing }">
-                        <input type="checkbox" class="inputCheckbox" v-model="item.completed" :id="item.id">
-                        <label :for="item.id" :class="{'completed': item.completed }">
-                            <span class="todoCheckbox " :class="{'check': item.completed }"></span>{{item.title}}
-                        </label>
-                        <div class="editIcon ml-auto">
-                            <a href="#">
-                                <i class="far fa-star"></i>
-                            </a>
-                            <a @click.prevent="item.editing = !item.editing" href="#">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
-                            <a href="#" @click.prevent="removeTodo(key)">
-                                <i class="far fa-trash-alt"></i>
-                            </a>
+                    <div class="addTask">
+                        <div class="addTask-view d-flex flex-wrap justify-content-between align-items-start">
+                            <input type="checkbox" class="inputCheckbox">
+                            <label>
+                                <span class="todoCheckbox"></span>
+                                <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle">
+                            </label>
+                            <div class="editIcon ml-auto">
+                                <a href="#">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a @click.prevent="item.editing = !item.editing" href="#">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <a href="#" @click.prevent="removeTodo(key)">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                            </div>
+                            <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }" v-if="item.editing">
+                                <li>
+                                    <i class="far fa-calendar-alt"></i>
+                                </li>
+                                <li>
+                                    <i class="far fa-file"></i>
+                                </li>
+                                <li>
+                                    <i class="far fa-comment-dots"></i>
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }">
-                            <li>
-                                <i class="far fa-calendar-alt"></i>
-                            </li>
-                            <li>
-                                <i class="far fa-file"></i>
-                            </li>
-                            <li>
-                                <i class="far fa-comment-dots"></i>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="scroll animated fadeInDown" v-if="item.editing">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <div class="scroll" v-if="!item.editing">
+                            <ul class="d-flex flex-column">
+                                <li>
+                                    <label for="">
+                                        <i class="far fa-calendar-alt"></i>Deadline</label>
+                                    <br>
+                                    <input type="date" class="deadlineInput">
+                                    <input type="time" class="deadlineInput-time">
+                                </li>
+                                <li>
+                                    <label for="file">
+                                        <i class="far fa-file"></i>File</label>
+                                    <br>
+                                    <input type="file" id="file" style="display: none;">
+                                    <label for="file" style="margin: 10px 0 0 25px;" class="fileLabel"></label>
+                                </li>
+                                <li>
+                                    <label for="textarea">
+                                        <i class="far fa-comment-dots"></i>Comment</label>
+                                    <br>
+                                    <textarea class="commentTextarea" id="textarea" placeholder="Type your memo here…" cols="50" rows="10"></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button d-flex" v-if="!item.editing">
+                            <button class="cancelBtn col-6">X Cancel</button>
+                            <button class="addTaskBtn col-6" @click="addTodo">+ Add Task</button>
+                        </div>
                     </div>
                 </li>
             </ul>
