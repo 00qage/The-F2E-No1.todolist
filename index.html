@@ -30,7 +30,7 @@
             </ul>
         </header>
         <section class="todo-content d-flex flex-column  align-items-center">
-            <button class="todoInput" @click="addTask = !addTask"> + Add Task</button>
+            <button class="todoInput" @click="addTask = !addTask" v-if="!addTask"> + Add Task</button>
             <div class="addTask" v-if="addTask" v-cloak>
                 <div class="addTask-view d-flex flex-wrap justify-content-between align-items-start">
                     <input type="checkbox" class="inputCheckbox">
@@ -72,7 +72,7 @@
                     </ul>
                 </div>
                 <div class="button d-flex">
-                    <button class="cancelBtn col-6">X Cancel</button>
+                    <button class="cancelBtn col-6"  @click="addTask = !addTask">X Cancel</button>
                     <button class="addTaskBtn col-6" @click="addTodo">+ Add Task</button>
                 </div>
 

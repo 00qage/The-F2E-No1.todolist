@@ -5,8 +5,8 @@ var app = new Vue({
         deadline: '',
         file: '',
         Comment: '',
-        cacheTodo:{},
-        cacheTitle:'',
+        cacheTodo: {},
+        cacheTitle: '',
         todos: [{
             id: '444',
             title: '555',
@@ -19,7 +19,7 @@ var app = new Vue({
     },
     methods: {
         addTodo: function () {
-            var value = this.newtodo.trim();
+            var value = this.todoTitle.trim();
             var times = Date.now();
             if (!value) {
                 return;
@@ -27,10 +27,10 @@ var app = new Vue({
             this.todos.push({
                 id: times,
                 title: value,
-                point: false,
                 completed: false,
                 editing: false,
-                
+                point: false,
+
             });
             this.newtodo = '';
         },
