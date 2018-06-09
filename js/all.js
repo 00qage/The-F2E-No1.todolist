@@ -2,18 +2,20 @@ var app = new Vue({
     el: '#app',
     data: {
         todoTitle: '',
-        deadline: '',
-        file: '',
-        Comment: '',
+        todoDeadline: '',
+        todoFile: '',
+        todoComment: '',
         cacheTodo: {},
         cacheTitle: '',
-        todos: [{
-            id: '444',
-            title: '555',
-            completed: false,
-            editing: false,
-            point: false,
-        }],
+        todos: [
+            //     {
+            //     id: '444',
+            //     title: '555',
+            //     completed: false,
+            //     editing: false,
+            //     point: false,
+            // }
+        ],
         visibility: 'all',
         addTask: false,
     },
@@ -26,13 +28,22 @@ var app = new Vue({
             }
             this.todos.push({
                 id: times,
+                deadline: '',
+                file: '',
+                comment: '',
                 title: value,
                 completed: false,
                 editing: false,
                 point: false,
 
             });
-            this.newtodo = '';
+            this.todoTitle = '';
+            this.addTask = false;
+        },
+        cancelAddTodo: function () {
+            this.todoTitle = '';
+            this.addTask = false;
+
         },
         removeTodo: function (key) {
             this.todos.splice(key, 1);
@@ -42,6 +53,12 @@ var app = new Vue({
             this.cacheTitle = item.title;
         },
         cancelEdit: function () {
+            this.cacheTodo.editing = false;
+            this.cacheTodo = {};
+        },
+        doneEdit: function (item) {
+            item.title = this.cacheTitle;
+            this.cacheTitle = '';
             this.cacheTodo.editing = false;
             this.cacheTodo = {};
         }

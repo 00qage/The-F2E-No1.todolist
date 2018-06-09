@@ -259,6 +259,8 @@ a {
         margin-bottom: 0px;
         height: 75px;
         padding: 24px 32px 24px 32px; }
+      .todo-content-list .addTask .todo-view.point {
+        background: #FFF2DC; }
       .todo-content-list .addTask .todo-view .inputCheckbox {
         display: none; }
       .todo-content-list .addTask .todo-view label {
@@ -406,6 +408,9 @@ a {
       border-radius: 0 0 5px 0;
       height: 60px;
       cursor: pointer; }
+
+.displayNone {
+  display: none; }
 
 [v-cloak] {
   display: none; }

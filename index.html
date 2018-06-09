@@ -39,9 +39,9 @@
                         <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle">
                     </label>
                     <div class="editIcon ml-auto">
-                        <a href="#">
+                        <!-- <a href="#">
                             <i class="far fa-star"></i>
-                        </a>
+                        </a> -->
                         <a href="#">
                             <i class="fas fa-pencil-alt"></i>
                         </a>
@@ -72,15 +72,15 @@
                     </ul>
                 </div>
                 <div class="button d-flex">
-                    <button class="cancelBtn col-6"  @click="addTask = !addTask">X Cancel</button>
+                    <button class="cancelBtn col-6"  @click="cancelAddTodo">X Cancel</button>
                     <button class="addTaskBtn col-6" @click="addTodo">+ Add Task</button>
                 </div>
 
             </div>
             <ul class="todo-content-list" v-cloak>
-                <li v-for="(item , key) in filteredTodos">
+                <li v-for="(item , key) in filteredTodos" :key="item.id">
                     <div class="addTask">
-                        <div class="todo-view d-flex flex-wrap justify-content-between align-items-start" :class="{'editing':item.editing,'completed':item.completed}">
+                        <div class="todo-view d-flex flex-wrap justify-content-between align-items-start" :class="{'editing':item.editing,'completed':item.completed,'point':item.point}">
                             <input type="checkbox" class="inputCheckbox" :id="item.id" v-model="item.completed">
                             <label :for="item.id" :class="{'completed':item.completed}">
                                 <span class="todoCheckbox" :class="{'check':item.completed}"></span><span v-if="!item.editing">{{item.title}}</span>
@@ -98,13 +98,13 @@
                                 </a>
                             </div>
                             <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }" v-if="!item.editing">
-                                <li>
+                                <li v-if="item.deadline !== ''">
                                     <i class="far fa-calendar-alt"></i>
                                 </li>
-                                <li>
+                                <li  v-if="item.file !== ''">
                                     <i class="far fa-file"></i>
                                 </li>
-                                <li>
+                                <li  v-if="item.comment !== ''">
                                     <i class="far fa-comment-dots"></i>
                                 </li>
                             </ul>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="button d-flex" v-if="item.editing">
                             <button class="cancelBtn col-6" @click="cancelEdit()">X Cancel</button>
-                            <button class="addTaskBtn col-6" @click="addTodo">+ Save</button>
+                            <button class="addTaskBtn col-6" @click="doneEdit(item)">+ Save</button>
                         </div>
                     </div>
                 </li>

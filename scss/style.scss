@@ -235,6 +235,9 @@
                 height: 75px;
                 padding: 24px 32px 24px 32px;
             }
+            &.point{
+                background: #FFF2DC;
+            }
             .inputCheckbox {
                 display: none;
             }
@@ -406,10 +409,9 @@
 }
 
 
-// .scroll {
-//     height: 380px;
-//     background: #F2F2F2;
-// }
+.displayNone {
+    display: none;
+}
 [v-cloak] {
     display: none;
 }
