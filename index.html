@@ -30,7 +30,7 @@
             </ul>
         </header>
         <section class="todo-content d-flex flex-column  align-items-center">
-            <button class="todoInput" @click="addTask = !addTask" v-if="!addTask"> + Add Task</button>
+            <input type="text" placeholder="+ Add Task" class="todoInput" @click="addTask = !addTask" v-if="!addTask"></input type="text">
             <div class="addTask" v-if="addTask" v-cloak>
                 <div class="addTask-view d-flex flex-wrap justify-content-between align-items-start">
                     <input type="checkbox" class="inputCheckbox">
@@ -53,8 +53,8 @@
                             <label for="">
                                 <i class="far fa-calendar-alt"></i>Deadline</label>
                             <br>
-                            <input type="date" class="deadlineInput">
-                            <input type="time" class="deadlineInput-time">
+                            <input type="date" class="deadlineInput" v-model="todoDate">
+                            <input type="time" class="deadlineInput-time" v-model="todoTime">
                         </li>
                         <li>
                             <label for="file">
@@ -67,7 +67,7 @@
                             <label for="textarea">
                                 <i class="far fa-comment-dots"></i>Comment</label>
                             <br>
-                            <textarea class="commentTextarea" id="textarea" placeholder="Type your memo here…" cols="50" rows="10"></textarea>
+                            <textarea v-model="todoComment" class="commentTextarea" id="textarea" placeholder="Type your memo here…" cols="50" rows="10"></textarea>
                         </li>
                     </ul>
                 </div>
@@ -99,7 +99,7 @@
                             </div>
                             <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }" v-if="!item.editing">
                                 <li v-if="item.deadline !== ''">
-                                    <i class="far fa-calendar-alt"></i>
+                                    <i class="far fa-calendar-alt"></i><span>{{item.deadlineDate}}</span>
                                 </li>
                                 <li  v-if="item.file !== ''">
                                     <i class="far fa-file"></i>
@@ -115,8 +115,8 @@
                                     <label for="">
                                         <i class="far fa-calendar-alt"></i>Deadline</label>
                                     <br>
-                                    <input type="date" class="deadlineInput">
-                                    <input type="time" class="deadlineInput-time">
+                                    <input type="date" class="deadlineInput" v-model="cacheDate">
+                                    <input type="time" class="deadlineInput-time" v-model="cacheTime">
                                 </li>
                                 <li>
                                     <label for="file">
@@ -129,7 +129,7 @@
                                     <label for="textarea">
                                         <i class="far fa-comment-dots"></i>Comment</label>
                                     <br>
-                                    <textarea class="commentTextarea" id="textarea" placeholder="Type your memo here…" cols="50" rows="10"></textarea>
+                                    <textarea v-model="cacheComment" class="commentTextarea" id="textarea" placeholder="Type your memo here…" cols="50" rows="10"></textarea>
                                 </li>
                             </ul>
                         </div>

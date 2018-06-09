@@ -2,11 +2,16 @@ var app = new Vue({
     el: '#app',
     data: {
         todoTitle: '',
-        todoDeadline: '',
+        todoDate: '',
+        todoTime:'',
         todoFile: '',
         todoComment: '',
         cacheTodo: {},
         cacheTitle: '',
+        cacheDate: '',
+        cacheTime: '',
+        cacheFile: '',
+        cacheComment: '',
         todos: [
             //     {
             //     id: '444',
@@ -22,26 +27,38 @@ var app = new Vue({
     methods: {
         addTodo: function () {
             var value = this.todoTitle.trim();
-            var times = Date.now();
+            var date = this.todoDate;
+            var time = this.todoTime;
+            var tComment = this.todoComment;
+            var timestamp = Date.now();
             if (!value) {
                 return;
             }
             this.todos.push({
-                id: times,
-                deadline: '',
-                file: '',
-                comment: '',
+                id: timestamp,
                 title: value,
+                deadlineDate:date,
+                deadlineTime:time,
+                file: '',
+                comment:tComment,
                 completed: false,
                 editing: false,
                 point: false,
 
             });
             this.todoTitle = '';
+            this.todoDate = '';
+            this.todoTime = '';
+            this.todoFile = '';
+            this.todoComment = '';
             this.addTask = false;
         },
         cancelAddTodo: function () {
             this.todoTitle = '';
+            this.todoDate = '';
+            this.todoTime = '';
+            this.todoFile = '';
+            this.todoComment = '';
             this.addTask = false;
 
         },
@@ -51,6 +68,10 @@ var app = new Vue({
         editTodo: function (item) {
             this.cacheTodo = item;
             this.cacheTitle = item.title;
+            this.cacheDate = item.deadlineDate,
+            this.cacheTime = item.deadlineTime,
+            this.cacheFile = '',
+            this.cacheComment = item.comment;
         },
         cancelEdit: function () {
             this.cacheTodo.editing = false;
@@ -58,7 +79,15 @@ var app = new Vue({
         },
         doneEdit: function (item) {
             item.title = this.cacheTitle;
+            item.deadlineDate = this.cacheDate;
+            item.deadlineTime = this.cacheTime;
+            // item.file = this.cacheFile;
+            item.comment = this.cacheComment;
+            
             this.cacheTitle = '';
+            this.cacheDate = '';
+            this.cacheTime = '';
+            this.cacheComment = '';
             this.cacheTodo.editing = false;
             this.cacheTodo = {};
         }

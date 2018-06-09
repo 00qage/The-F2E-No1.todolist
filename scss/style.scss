@@ -62,7 +62,7 @@
     }
     .addTask {
         width: 620px;
-        box-shadow: 0 4px 4px 0 #C8C8C8;
+        transition: all 1s;
         .addTask-view {
             display: block;
             box-sizing: border-box;
@@ -111,6 +111,7 @@
         .scroll {
             background: #F2F2F2;
             padding: 24px 75px 0 75px;
+            box-shadow: 0 4px 4px 0 #C8C8C8;
             ul {
                 li {
                     margin-bottom: 24px;
@@ -149,7 +150,7 @@
                         margin-left: 8px;
                         padding: 8px 16px;
                         background: #FFFFFF;
-                        border-radius: 2px;
+                        border-radius: 4px;
                         border: none;
                         font-family: Roboto Regular;
                         font-size: 16px;
@@ -158,7 +159,7 @@
                         margin: 10px 0 0 28px;
                         padding: 8px 16px;
                         background: #FFFFFF;
-                        border-radius: 2px;
+                        border-radius: 4px;
                         border: none;
                         font-family: Roboto Regular;
                         font-size: 16px;
@@ -183,6 +184,7 @@
         }
         .button {
             font-family: Roboto Regular;
+            box-shadow: 0 4px 4px 0 #C8C8C8;
         }
         .cancelBtn {
             box-sizing: border-box;
@@ -214,13 +216,14 @@
     margin-bottom: 100px;
     .addTask {
         width: 620px;
-        box-shadow: 0 4px 4px 0 #C8C8C8;
+        // box-shadow: 0 4px 4px 0 #C8C8C8;
         .todo-view {
             display: block;
             box-sizing: border-box;
             width: 620px;
             height: 100px;
             padding: 24px 32px 16px 32px;
+            margin-bottom: 8px;
             background: #F2F2F2;
             border-radius: 5px 5px 0 0;
             border-bottom: 3px solid #C8C8C8;
@@ -305,6 +308,9 @@
                     margin-right: 15px;
                     font-size: 16px;
                 }
+                span{
+                    margin-right: 15px;
+                }
             }
         }
         .scroll {
@@ -348,7 +354,7 @@
                         margin-left: 8px;
                         padding: 8px 16px;
                         background: #FFFFFF;
-                        border-radius: 2px;
+                        border-radius: 4px;
                         border: none;
                         font-family: Roboto Regular;
                         font-size: 16px;
@@ -357,7 +363,7 @@
                         margin: 10px 0 0 28px;
                         padding: 8px 16px;
                         background: #FFFFFF;
-                        border-radius: 2px;
+                        border-radius: 4px;
                         border: none;
                         font-family: Roboto Regular;
                         font-size: 16px;
@@ -382,6 +388,7 @@
         }
         .button {
             font-family: Roboto Regular;
+            margin-bottom: 24px;
         }
         .cancelBtn {
             box-sizing: border-box;

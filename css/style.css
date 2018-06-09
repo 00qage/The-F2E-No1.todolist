@@ -100,8 +100,9 @@ a {
       color: #C8C8C8; }
   .todo-content .addTask {
     width: 620px;
-    -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
-    box-shadow: 0 4px 4px 0 #C8C8C8; }
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s; }
     .todo-content .addTask .addTask-view {
       display: block;
       -webkit-box-sizing: border-box;
@@ -140,7 +141,9 @@ a {
           color: #4A90E2; }
     .todo-content .addTask .scroll {
       background: #F2F2F2;
-      padding: 24px 75px 0 75px; }
+      padding: 24px 75px 0 75px;
+      -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
+      box-shadow: 0 4px 4px 0 #C8C8C8; }
       .todo-content .addTask .scroll ul li {
         margin-bottom: 24px; }
         .todo-content .addTask .scroll ul li label i {
@@ -172,7 +175,7 @@ a {
           margin-left: 8px;
           padding: 8px 16px;
           background: #FFFFFF;
-          border-radius: 2px;
+          border-radius: 4px;
           border: none;
           font-family: Roboto Regular;
           font-size: 16px; }
@@ -180,7 +183,7 @@ a {
           margin: 10px 0 0 28px;
           padding: 8px 16px;
           background: #FFFFFF;
-          border-radius: 2px;
+          border-radius: 4px;
           border: none;
           font-family: Roboto Regular;
           font-size: 16px; }
@@ -209,7 +212,9 @@ a {
             color: #C8C8C8;
             line-height: 24px; }
     .todo-content .addTask .button {
-      font-family: Roboto Regular; }
+      font-family: Roboto Regular;
+      -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
+      box-shadow: 0 4px 4px 0 #C8C8C8; }
     .todo-content .addTask .cancelBtn {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -237,9 +242,7 @@ a {
   margin-top: 25px;
   margin-bottom: 100px; }
   .todo-content-list .addTask {
-    width: 620px;
-    -webkit-box-shadow: 0 4px 4px 0 #C8C8C8;
-    box-shadow: 0 4px 4px 0 #C8C8C8; }
+    width: 620px; }
     .todo-content-list .addTask .todo-view {
       display: block;
       -webkit-box-sizing: border-box;
@@ -247,6 +250,7 @@ a {
       width: 620px;
       height: 100px;
       padding: 24px 32px 16px 32px;
+      margin-bottom: 8px;
       background: #F2F2F2;
       border-radius: 5px 5px 0 0;
       border-bottom: 3px solid #C8C8C8; }
@@ -314,6 +318,8 @@ a {
         .todo-content-list .addTask .todo-view .dataIcon i {
           margin-right: 15px;
           font-size: 16px; }
+        .todo-content-list .addTask .todo-view .dataIcon span {
+          margin-right: 15px; }
     .todo-content-list .addTask .scroll {
       background: #F2F2F2;
       padding: 24px 75px 0 75px; }
@@ -348,7 +354,7 @@ a {
           margin-left: 8px;
           padding: 8px 16px;
           background: #FFFFFF;
-          border-radius: 2px;
+          border-radius: 4px;
           border: none;
           font-family: Roboto Regular;
           font-size: 16px; }
@@ -356,7 +362,7 @@ a {
           margin: 10px 0 0 28px;
           padding: 8px 16px;
           background: #FFFFFF;
-          border-radius: 2px;
+          border-radius: 4px;
           border: none;
           font-family: Roboto Regular;
           font-size: 16px; }
@@ -385,7 +391,8 @@ a {
             color: #C8C8C8;
             line-height: 24px; }
     .todo-content-list .addTask .button {
-      font-family: Roboto Regular; }
+      font-family: Roboto Regular;
+      margin-bottom: 24px; }
     .todo-content-list .addTask .cancelBtn {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
