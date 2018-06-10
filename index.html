@@ -36,7 +36,7 @@
                     <input type="checkbox" class="inputCheckbox">
                     <label>
                         <span class="todoCheckbox"></span>
-                        <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle">
+                        <input class="todoTitleInput" placeholder="Type Something Here…" type="text" v-model="todoTitle" @keyup.enter="addTodo" >
                     </label>
                     <div class="editIcon ml-auto">
                         <!-- <a href="#">
@@ -93,7 +93,7 @@
                                 <a @click.prevent="item.editing = !item.editing,editTodo(item)" :class="{'editing':item.editing}" href="#">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
-                                <a href="#" @click.prevent="removeTodo(key)">
+                                <a href="#" @click.prevent="removeTodo(item)">
                                     <i class="far fa-trash-alt"></i>
                                 </a>
                             </div>

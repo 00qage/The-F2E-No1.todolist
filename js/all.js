@@ -62,8 +62,12 @@ var app = new Vue({
             this.addTask = false;
 
         },
-        removeTodo: function (key) {
-            this.todos.splice(key, 1);
+        removeTodo: function (todo) {
+            var vm = this;
+            var newIndex = vm.todos.findIndex(function (item,key) {
+                return todo.id === item.id;
+            })
+            this.todos.splice(newIndex, 1);
         },
         editTodo: function (item) {
             this.cacheTodo = item;
