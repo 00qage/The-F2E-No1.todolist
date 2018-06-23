@@ -253,7 +253,15 @@ a {
       margin-bottom: 8px;
       background: #F2F2F2;
       border-radius: 5px 5px 0 0;
-      border-bottom: 3px solid #C8C8C8; }
+      border-bottom: 3px solid #C8C8C8;
+      -webkit-transition: -webkit-transform .5s;
+      transition: -webkit-transform .5s;
+      -o-transition: transform .5s;
+      transition: transform .5s;
+      transition: transform .5s, -webkit-transform .5s; }
+      .todo-content-list .addTask .todo-view:hover {
+        -webkit-transform: scale3d(1.01, 1.01, 1);
+        transform: scale3d(1.01, 1.01, 1); }
       .todo-content-list .addTask .todo-view.completed {
         height: 75px;
         padding: 24px 32px 24px 32px; }
@@ -265,6 +273,21 @@ a {
         padding: 24px 32px 24px 32px; }
       .todo-content-list .addTask .todo-view.point {
         background: #FFF2DC; }
+      .todo-content-list .addTask .todo-view .handleIcon {
+        position: absolute;
+        left: 5px;
+        margin-right: 10px; }
+        .todo-content-list .addTask .todo-view .handleIcon:hover, .todo-content-list .addTask .todo-view .handleIcon:focus {
+          cursor: move; }
+          .todo-content-list .addTask .todo-view .handleIcon:hover .circle, .todo-content-list .addTask .todo-view .handleIcon:focus .circle {
+            background: #4A90E2; }
+        .todo-content-list .addTask .todo-view .handleIcon .circle {
+          display: block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          margin: 4px;
+          background: #D8D8D8; }
       .todo-content-list .addTask .todo-view .inputCheckbox {
         display: none; }
       .todo-content-list .addTask .todo-view label {
@@ -421,3 +444,7 @@ a {
 
 [v-cloak] {
   display: none; }
+
+.chosen {
+  -webkit-box-shadow: 0 5px 15px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 15px 6px rgba(0, 0, 0, 0.5); }

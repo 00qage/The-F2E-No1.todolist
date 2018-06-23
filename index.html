@@ -8,10 +8,11 @@
     <title>todolist</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -77,10 +78,11 @@
                 </div>
 
             </div>
-            <ul class="todo-content-list" v-cloak>
+            <ul class="todo-content-list" id="list" v-cloak>
                 <li v-for="(item , key) in filteredTodos" :key="item.id">
                     <div class="addTask">
-                        <div class="todo-view d-flex flex-wrap justify-content-between align-items-start" :class="{'editing':item.editing,'completed':item.completed,'point':item.point}">
+                        <div class="todo-view d-flex flex-wrap justify-content-between align-items-center" :class="{'editing':item.editing,'completed':item.completed,'point':item.point}">
+                            <span class="handleIcon d-flex flex-column"><div class="circle"></div><div class="circle"></div><div class="circle"></div></span>
                             <input type="checkbox" class="inputCheckbox" :id="item.id" v-model="item.completed">
                             <label :for="item.id" :class="{'completed':item.completed}">
                                 <span class="todoCheckbox" :class="{'check':item.completed}"></span><span v-if="!item.editing">{{item.title}}</span>
@@ -98,7 +100,7 @@
                                 </a>
                             </div>
                             <ul class="dataIcon d-flex mt-auto col-10" :class="{'completed': item.completed }" v-if="!item.editing">
-                                <li v-if="item.deadline !== ''">
+                                <li v-if="item.deadlineDate !== ''">
                                     <i class="far fa-calendar-alt"></i><span>{{item.deadlineDate}}</span>
                                 </li>
                                 <li  v-if="item.file !== ''">
@@ -142,7 +144,10 @@
             </ul>
         </section>
     </section>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
     <script src="/js/all.js"></script>
 </body>
 

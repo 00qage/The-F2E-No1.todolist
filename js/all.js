@@ -41,6 +41,8 @@ var app = new Vue({
                 deadlineTime:time,
                 file: '',
                 comment:tComment,
+                // isHover:false,
+                // isFocus:false,
                 completed: false,
                 editing: false,
                 point: false,
@@ -120,4 +122,14 @@ var app = new Vue({
             }
         }
     }
-})
+});
+
+
+//拖曳功能
+// var list = document.getElementById("list");
+  Sortable.create(list, {
+    handle: '.handleIcon',
+    animation: 300,
+    chosenClass: 'chosen'
+  });
+
