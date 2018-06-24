@@ -218,6 +218,7 @@
         width: 620px;
         // box-shadow: 0 4px 4px 0 #C8C8C8;
         .todo-view {
+            order: 80;
             display: block;
             box-sizing: border-box;
             width: 620px;
@@ -452,4 +453,9 @@
 //拖曳功能點選時
 .chosen {
     box-shadow: 0 5px 15px 6px rgba(0, 0, 0, .5);
+  }
+
+  //置頂功能
+  .isTop{
+    order: 1  !important;
   }

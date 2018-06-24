@@ -244,6 +244,9 @@ a {
   .todo-content-list .addTask {
     width: 620px; }
     .todo-content-list .addTask .todo-view {
+      -webkit-box-ordinal-group: 81;
+      -ms-flex-order: 80;
+      order: 80;
       display: block;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -448,3 +451,8 @@ a {
 .chosen {
   -webkit-box-shadow: 0 5px 15px 6px rgba(0, 0, 0, 0.5);
   box-shadow: 0 5px 15px 6px rgba(0, 0, 0, 0.5); }
+
+.isTop {
+  -webkit-box-ordinal-group: 2  !important;
+  -ms-flex-order: 1  !important;
+  order: 1  !important; }

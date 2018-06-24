@@ -78,8 +78,8 @@
                 </div>
 
             </div>
-            <ul class="todo-content-list" id="list" v-cloak>
-                <li v-for="(item , key) in filteredTodos" :key="item.id">
+            <ul class="todo-content-list d-flex flex-column" id="list" v-cloak>
+                <li v-for="(item , key) in filteredTodos" :key="item.id" style="order:80;" :class="{'isTop':item.point}">
                     <div class="addTask">
                         <div class="todo-view d-flex flex-wrap justify-content-between align-items-center" :class="{'editing':item.editing,'completed':item.completed,'point':item.point}">
                             <span class="handleIcon d-flex flex-column"><div class="circle"></div><div class="circle"></div><div class="circle"></div></span>
