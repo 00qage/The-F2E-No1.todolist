@@ -41,7 +41,7 @@ var app = new Vue({
                 deadlineTime:time,
                 file: '',
                 comment:tComment,
-                // isHover:false,
+                ishover:false,
                 // isFocus:false,
                 completed: false,
                 editing: false,

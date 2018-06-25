@@ -274,20 +274,21 @@ a {
       .todo-content-list .addTask .todo-view.point {
         background: #FFF2DC; }
       .todo-content-list .addTask .todo-view .handleIcon {
+        display: inline-block;
         position: absolute;
         left: 5px;
         margin-right: 10px; }
-        .todo-content-list .addTask .todo-view .handleIcon:hover, .todo-content-list .addTask .todo-view .handleIcon:focus {
-          cursor: move; }
-          .todo-content-list .addTask .todo-view .handleIcon:hover .circle, .todo-content-list .addTask .todo-view .handleIcon:focus .circle {
-            background: #4A90E2; }
         .todo-content-list .addTask .todo-view .handleIcon .circle {
-          display: block;
+          display: inline-block;
           width: 5px;
           height: 5px;
           border-radius: 50%;
           margin: 4px;
           background: #D8D8D8; }
+        .todo-content-list .addTask .todo-view .handleIcon:hover, .todo-content-list .addTask .todo-view .handleIcon:focus {
+          cursor: move; }
+          .todo-content-list .addTask .todo-view .handleIcon:hover .circle, .todo-content-list .addTask .todo-view .handleIcon:focus .circle {
+            background: #4A90E2; }
       .todo-content-list .addTask .todo-view .inputCheckbox {
         display: none; }
       .todo-content-list .addTask .todo-view label {

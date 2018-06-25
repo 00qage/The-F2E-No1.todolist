@@ -79,10 +79,10 @@
 
             </div>
             <ul class="todo-content-list d-flex flex-column" id="list" v-cloak>
-                <li v-for="(item , key) in filteredTodos" :key="item.id" style="order:80;" :class="{'isTop':item.point}">
+                <li v-for="(item , key) in filteredTodos" :key="item.id" style="order:80;" :class="{'isTop':item.point}" @mouseover="item.ishover = true" @mouseleave="item.ishover = false">
                     <div class="addTask">
                         <div class="todo-view d-flex flex-wrap justify-content-between align-items-center" :class="{'editing':item.editing,'completed':item.completed,'point':item.point}">
-                            <span class="handleIcon d-flex flex-column"><div class="circle"></div><div class="circle"></div><div class="circle"></div></span>
+                            <span class="handleIcon d-flex flex-column" v-if="item.ishover"><div class="circle"></div><div class="circle"></div><div class="circle"></div></span>
                             <input type="checkbox" class="inputCheckbox" :id="item.id" v-model="item.completed">
                             <label :for="item.id" :class="{'completed':item.completed}">
                                 <span class="todoCheckbox" :class="{'check':item.completed}"></span><span v-if="!item.editing">{{item.title}}</span>
